@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEDxShibuya Youth</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="bg"></div>
+
+    <header class="header">
+      <div class="container header-inner">
+        <div class="logo">TEDxShibuya Youth</div>
+        <nav class="nav">
+          <a href="team.html">MEET THE TEAM</a>
+          <a href="#speakers">SPEAKERS</a>
+          <a href="#join">JOIN US</a>
+          <a href="#sponsors">SPONSORS</a>
+          <a href="#contact">CONTACT</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero container">
+      <div class="hero-text">
+        <p class="theme">Theme 2026</p>
+        <h1 class="glow-title">HIDDEN MECHANISMS</h1>
+        <p class="hero-paragraph">paragraph</p>
+      </div>
+      <div class="hero-image">
+        <img src="images/gears.png" alt="gears" />
+      </div>
+    </section>
+
+    <section class="about container">
+      <h1>What is <span>TEDxShibuya Youth</span>?</h1>
+      <h2>
+        TokYouth (TEDxShibuyaYouth & TEDxYouth@Tokyo) is a youth group organizing
+        TEDx events for Tokyo youth to gather and exchange transformative ideas and
+        experiences. We're building a vibrant community of passionate individuals
+        dedicated to creating positive change. Through our initiatives and
+        collaborations, we aim to inspire action and push the world in a direction
+        that benefits all.
+      </h2>
+    </section>
+
+    <section class="directors container" id="directors">
+      <h2>A message from our Directors</h2>
+
+      <div class="envelope-grid">
+        <button
+  class="envelope"
+  type="button"
+  data-director="Director: Angela"
+  data-title="A message from the Director"
+  data-message="As the Director of TEDxShibuyaYouth, I am so excited to lead a team of young, talented, and goal-oriented individuals to hold an event around this year’s theme: Hidden Mechanism!
+
+“All the world’s a stage, and all the men and women merely players” is a line from Shakespeare’s play “As You Like It”. He implies that everyone puts up a performance and fulfills a role in life’s play. But to what extent are people truly performing? When do actors exit from the “stage”, and how do they act once they take off their mask?
+
+Hidden Mechanism explores the vulnerable state of when that mask is off: where the hidden ideas, systems, and emotions that shape how we think and act are exposed for others and yourself to see. What motivates you to wake up in the morning? What drives you toward your goal? What factors contribute to your beliefs and values?
+
+Perhaps by uncovering these questions, we can be a step closer to answering the biggest mystery of all: ourselves.
+
+Look forward to the inspiration this year’s speakers and our team will bring!"
+>
+  <div class="env-back"></div>
+  <div class="env-paper"></div>
+  <div class="env-front"><div class="pocket"></div></div>
+  <div class="env-flap"></div>
+  <div class="env-text">
+    <div class="env-kicker">Click to open</div>
+    <div class="env-to">To: Our Audience</div>
+    <div class="env-from">From: Director; Angela</div>
+  </div>
+</button>
+
+        <button
+          class="envelope"
+          type="button"
+          data-director="Co-Director: Runa"
+          data-title="A message from Director 2"
+          data-message="Hi everyone,
+
+This is Runa, and I am delighted to work as the co-director for this year’s event.
+
+Our theme, ‘Hidden Mechanism’, hopes to explore our unconscious mind and uncover relationships and perspectives that we have not yet seen. Often, we overlook the information we take in, but through this theme, we hope to awaken and inspire your curiosities.
+
+Together with Angela, our director, I will work to guide and support our team in creating a successful and enjoyable event. Our goal is for this event to leave a lasting impression on everyone who contributes—whether as planners, sponsors, or audience members—and to continue entertaining and inspiring you.
+
+Thank you.
+"
+        >
+          <div class="env-back"></div>
+          <div class="env-paper"></div>
+          <div class="env-front"><div class="pocket"></div></div>
+          <div class="env-flap"></div>
+          <div class="env-text">
+            <div class="env-kicker">Click to open</div>
+            <div class="env-to">To: Our Audience</div>
+            <div class="env-from">From: Co-Director; Runa</div>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close="true"></div>
+
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-top">
+          <div class="modal-title-wrap">
+            <p class="modal-kicker">Letter</p>
+            <h3 id="modalTitle" class="modal-title">Title</h3>
+          </div>
+          <button class="modal-close" type="button" data-close="true" aria-label="Close">✕</button>
+        </div>
+
+        <div class="letter">
+          <div class="letter-head">
+            <div class="letter-meta">
+              <div class="letter-from" id="modalFrom">From</div>
+              <div class="letter-date" id="modalDate"></div>
+            </div>
+            <div class="letter-line"></div>
+          </div>
+
+          <div class="letter-body" id="modalBody"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const modal = document.getElementById("modal");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalFrom = document.getElementById("modalFrom");
+      const modalBody = document.getElementById("modalBody");
+      const modalDate = document.getElementById("modalDate");
+
+      function openModal({ title, from, message }) {
+        modalTitle.textContent = title;
+        modalFrom.textContent = `From: ${from}`;
+        modalBody.textContent = message;
+        modalDate.textContent = new Date().toLocaleDateString(undefined, {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        });
+
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        modal.querySelector(".modal-close").focus();
+      }
+
+      function closeModal() {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      document.querySelectorAll(".envelope").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          openModal({
+            title: btn.dataset.title || "Message",
+            from: btn.dataset.director || "Director",
+            message: btn.dataset.message || "",
+          });
+        });
+      });
+
+      modal.addEventListener("click", (e) => {
+        if (e.target?.dataset?.close === "true") closeModal();
+      });
+
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+      });
+    </script>
+  </body>
+</html>
