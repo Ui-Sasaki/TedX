@@ -68,7 +68,7 @@ body{
   display:flex;
   gap:18px;
   flex-wrap:wrap;
-  justify-content:flex-end;
+  justify-content:right;
 }
 
 .nav a{
