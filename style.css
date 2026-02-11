@@ -111,7 +111,7 @@ body{
 
 .hero-paragraph{
   margin-top:18px;
-  max-width:42ch;
+  max-width:56ch;
   line-height:1.7;
   color:var(--muted);
   position:relative;
@@ -141,9 +141,10 @@ body{
 .about h1 span{color:var(--ted-red)}
 
 .about h2{
-  max-width:820px;
-  line-height:1.75;
-  color:rgba(0,0,0,.72);
+  max-width: none;       
+  width: 100%;
+  line-height: 1.75;
+  font-size: 18px;
 }
 
 .directors{margin:90px auto 110px}
@@ -530,3 +531,4 @@ body{
   .hero-image img{margin:18px 0 0;max-width:520px}
   .envelope-grid{grid-template-columns:1fr}
 }
+

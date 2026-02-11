@@ -8,15 +8,19 @@
   --card2:#fff8f8;
   --border:rgba(230,43,30,.45);
   --shadow:0 18px 55px rgba(0,0,0,.35);
-  --glass:rgba(255,255,255,.72);
-  --header-border:rgba(0,0,0,.08);
 }
 
 body{
-  font-family:"Helvetica Neue",Arial,sans-serif;
-  color:#fff;
-  background:#0b0b0b;
+  font-family:"Helvetica Neue","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  background:#f5f9ff;
+  color:#1f2a44;
   min-height:100vh;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:0 auto;
 }
 
 .bg{
@@ -35,7 +39,8 @@ body{
 }
 
 .wrap{
-  width:min(1200px, 92vw);
+  width:90%;
+  max-width:1200px;
   margin:0 auto;
 }
 
@@ -44,10 +49,8 @@ body{
   top:0;
   z-index:50;
   padding:18px 0;
-  background:var(--glass);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--header-border);
+  background:#ffffff;
+  border-bottom:1px solid rgba(0,0,0,.1);
 }
 
 .header-inner{
@@ -57,18 +60,17 @@ body{
   gap:18px;
 }
 
-.logo{
-  font-weight:900;
-  font-size:28px;
-  letter-spacing:.02em;
-  color:var(--ink);
+.logo img{
+  height:45px;
+  width:auto;
+  display:block;
 }
 
 .nav{
   display:flex;
   gap:18px;
   flex-wrap:wrap;
-  justify-content:right;
+  justify-content:flex-end;
 }
 
 .nav a{
@@ -85,12 +87,6 @@ body{
   background:rgba(0,0,0,.06);
   color:rgba(0,0,0,.95);
   transform:translateY(-1px);
-}
-
-.back:hover{
-  transform:translateY(-1px);
-  background:rgba(255,255,255,.12);
-  box-shadow:0 0 18px rgba(230,43,30,.22);
 }
 
 .page{
