@@ -48,10 +48,13 @@ body{
   position:sticky;
   top:0;
   z-index:50;
-  padding:18px 0;
+  height:70px;             
   background:#ffffff;
   border-bottom:1px solid rgba(0,0,0,.1);
+  display:flex;            
+  align-items:center;   
 }
+
 
 .header-inner{
   display:flex;
@@ -61,7 +64,7 @@ body{
 }
 
 .logo img{
-  height:45px;
+  height: 72px;
   width:auto;
   display:block;
 }
@@ -224,14 +227,6 @@ body{
 .section-head p{
   font-size:17px;
   line-height:1.85;
-}
-
-.logo img{
-  height:45px;
-  width:auto;
-  display:block;
-  transform:scale(2.2);
-  transform-origin:left center;
 }
 
 
