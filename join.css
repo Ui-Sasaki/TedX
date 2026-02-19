@@ -132,6 +132,21 @@ body{
   animation:textShift 10s ease-in-out infinite;
 }
 
+.site-footer{
+  width:100%;
+  margin-top:120px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+.site-footer img{
+  width:120%;        
+  max-width:none;   
+  height:auto;
+}
+
 @keyframes textShift{
   0%{ background-position:0% 50%; }
   50%{ background-position:100% 50%; }

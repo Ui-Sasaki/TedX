@@ -90,7 +90,7 @@ body{
   grid-template-columns:1.15fr 1fr;
   align-items:center;
   min-height:72vh;
-  padding-top:24px;
+  padding-top:45px;
   gap:32px;
 }
 
@@ -484,7 +484,7 @@ body{
 
 
 .hero-image img{
-  margin-top: -20%;
+  margin-top: -30%;
   width:100%;
   max-width:600px;
   height: 100%;
@@ -506,7 +506,7 @@ body{
   max-width:550px !important;
   height:auto !important;
   max-height:none !important;
-  margin-top:-12% !important;
+  margin-top:15% !important;
   margin-left: 15%;
 }
 
@@ -524,6 +524,21 @@ body{
 .hero-paragraph,
 .about {
   color:rgba(255,255,255,.9);
+}
+
+.site-footer{
+  width:100%;
+  margin-top:120px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+.site-footer img{
+  width:120%;        
+  max-width:none;   
+  height:auto;
 }
 
 @media (max-width:900px){

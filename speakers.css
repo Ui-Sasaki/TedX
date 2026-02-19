@@ -220,6 +220,21 @@ body{
   margin-right:10px;
 }
 
+.site-footer{
+  width:100%;
+  margin-top:-30px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+.site-footer img{
+  width:120%;        
+  max-width:none;   
+  height:auto;
+}
+
 @media (max-width: 900px){
   .speaker-grid{
     grid-template-columns:1fr;
