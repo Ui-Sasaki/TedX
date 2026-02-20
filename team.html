@@ -10,22 +10,29 @@
   <body>
     <div class="bg"></div>
 
-   <header class="header">
-      <div class="container header-inner">
-        <div class="logo">
-    <img src="images/logo.png" alt="TEDxShibuya Youth logo">
-    </div>
-        <nav class="nav">
-           <a href="index.html">HOME</a>
-        <a href="team.html">MEET THE TEAM</a>
-          <a href="speakers.html">SPEAKERS</a>
-          <a href="join.html">JOIN US</a>
-          <a href="contact.html">CONTACT</a>
-          <a href="tickets.html">TICKETS</a>
-        </nav>
-      </div>
-    </header>
+  
+  <header class="header">
+    <div class="container header-inner">
 
+      <div class="logo">TEDxShibuya Youth</div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="navMenu">
+        <a href="index.html">HOME</a>
+        <a href="team.html">MEET THE TEAM</a>
+        <a href="speakers.html">SPEAKERS</a>
+        <a href="join.html">JOIN US</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="tickets.html">TICKETS</a>
+      </nav>
+
+    </div>
+  </header>
 
     <main class="wrap page">
       <h1 class="title">Meet the Team!</h1>
@@ -253,9 +260,15 @@
         </div>
       </section>
     </main>
-    <footer class="site-footer">
-  <img src="footer.png" alt="Footer" />
-</footer>
+
+    <script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
+});
+</script>
 
   </body>
 </html>

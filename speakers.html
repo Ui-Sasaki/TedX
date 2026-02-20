@@ -12,18 +12,24 @@
 
   <header class="header">
     <div class="container header-inner">
-      <div class="logo">
-        <img src="images/logo.png" alt="TEDxShibuya Youth logo">
-      </div>
 
-      <nav class="nav">
-         <a href="index.html">HOME</a>
+      <div class="logo">TEDxShibuya Youth</div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="navMenu">
+        <a href="index.html">HOME</a>
         <a href="team.html">MEET THE TEAM</a>
-          <a href="speakers.html">SPEAKERS</a>
-          <a href="join.html">JOIN US</a>
-          <a href="contact.html">CONTACT</a>
-          <a href="tickets.html">TICKETS</a>
+        <a href="speakers.html">SPEAKERS</a>
+        <a href="join.html">JOIN US</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="tickets.html">TICKETS</a>
       </nav>
+
     </div>
   </header>
 
@@ -31,6 +37,24 @@
     <h1 class="title glow-title">SPEAKERS</h1>
 
     <section class="speaker-grid">
+
+       <article class="speaker-card wide-card">
+        <div class="speaker-image">
+          <img src="speakers/Sungha-Ryan-Yoo.png" alt="Sungha Ryan Yoo">
+        </div>
+
+        <div class="speaker-content">
+          <h2 class="speaker-name">
+            Sungha Ryan Yoo <span class="speaker-age">age 17</span>
+          </h2>
+
+          <p class="speaker-time">Estimated Speaking Time: 9min30sec</p>
+
+          <p class="speaker-bio">
+             We’re conditioned to link the word “innovation” with flashiness, and it’s to no fault of our own. Mediatic representation that restricts novel ideas to Silicon Valley has exacerbated the “Founder Epidemic,” wherein many chase flashy profitable ideas that supposedly can make them the next Steve Jobs. Innovation, however, spans much further than this one oversaturated category. Ideas like Generative Artificial Intelligence are oversaturated because they’re profitable and grab the spotlight, but there are many areas like Assistive Technologies that actually have a shortage of innovators. I want to encourage people to take a step back from our busy lives and reminisce about our childhood innocence and uncalculated curiosity: when we all asked “Why?” just because.
+          </p>
+        </div>
+      </article>
 
       <article class="speaker-card">
         <div class="speaker-image">
@@ -49,6 +73,7 @@
           </p>
         </div>
       </article>
+
 
       <article class="speaker-card">
         <div class="speaker-image">
@@ -80,7 +105,7 @@
           <p class="speaker-time">Estimated Speaking Time: 9-10min</p>
 
           <p class="speaker-bio">
-        My talk will explore the relevance of reading fiction in the modern world and the ways in which reading fiction can serve as a hidden mechanism toward greater understanding of the world.
+            My talk will explore the relevance of reading fiction in the modern world and the ways in which reading fiction can serve as a hidden mechanism toward greater understanding of the world.
         </div>
       </article>
 
@@ -100,10 +125,36 @@
         My speech will explore the idea of architecture and how its meaning extends beyond buildings, allowing for countless interpretations
         </div>
       </article>
+
+       <article class="speaker-card right-card">
+        <div class="speaker-image">
+          <img src="speakers/Rion-Kutsumizu.png" alt="Rion-Kutsumizu">
+        </div>
+
+        <div class="speaker-content">
+          <h2 class="speaker-name">
+            Rion Kutsumizu <span class="speaker-age">age 17</span>
+          </h2>
+
+          <p class="speaker-time">Estimated Speaking Time: 10mins</p>
+
+          <p class="speaker-bio">
+           My speech exposes the hidden mechanism behind gender equality, showing how paternity leave can break the glass ceiling in our society and inspiring listeners to create real change.          </p>
+        </div>
+      </article>
+
   </main>
 <footer class="site-footer">
   <img src="footer.png" alt="Footer" />
 </footer>
+<script>
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("open");
+});
+</script>
 
 </body>
 </html>

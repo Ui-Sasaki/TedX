@@ -1,3 +1,5 @@
+/* ================= RESET ================= */
+
 *{
   margin:0;
   padding:0;
@@ -9,6 +11,8 @@ body{
   background:#f5f9ff;
   color:#1f2a44;
 }
+
+/* ================= BACKGROUND ================= */
 
 .bg{
   position:fixed;
@@ -25,16 +29,20 @@ body{
   filter:saturate(.95) contrast(1.05);
 }
 
+/* ================= LAYOUT ================= */
+
 .container{
   width:90%;
   max-width:1200px;
   margin:0 auto;
 }
 
+/* ================= HEADER ================= */
+
 .header{
   position:sticky;
   top:0;
-  z-index:50;
+  z-index:100;
   height:70px;
   background:#ffffff;
   border-bottom:1px solid rgba(0,0,0,.1);
@@ -46,20 +54,15 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:18px;
+  width:100%;
 }
 
-.logo img{
-  height:72px;
-  width:auto;
-  display:block;
-}
+/* ================= NAV DESKTOP ================= */
 
 .nav{
   display:flex;
   gap:18px;
-  flex-wrap:wrap;
-  justify-content:flex-end;
+  align-items:center;
 }
 
 .nav a{
@@ -67,9 +70,9 @@ body{
   color:rgba(0,0,0,.78);
   font-size:13px;
   letter-spacing:.12em;
-  padding:10px 10px;
+  padding:10px 12px;
   border-radius:999px;
-  transition:transform .15s ease,background .15s ease,color .15s ease;
+  transition:all .2s ease;
 }
 
 .nav a:hover{
@@ -77,6 +80,29 @@ body{
   color:rgba(0,0,0,.95);
   transform:translateY(-1px);
 }
+
+/* ================= HAMBURGER ================= */
+
+.hamburger{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:5px;
+  width:28px;
+  height:22px;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+.hamburger span{
+  width:100%;
+  height:3px;
+  background:#000;
+  border-radius:3px;
+}
+
+/* ================= HERO CONTACT SECTION ================= */
 
 .contact-section{
   width:100%;
@@ -99,6 +125,8 @@ body{
   margin-bottom:70px;
   letter-spacing:.03em;
 }
+
+/* ================= BUTTON ================= */
 
 .ticket-button-wrapper{
   text-align:center;
@@ -129,6 +157,13 @@ body{
     0 0 90px rgba(230,43,30,.6);
 }
 
+@keyframes gradientMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+
 .site-footer{
   width:100%;
   margin-top:-50px;
@@ -139,24 +174,53 @@ body{
 }
 
 .site-footer img{
-  width:120%;        
-  max-width:none;   
+  width:120%;
+  max-width:none;
   height:auto;
 }
 
-@keyframes gradientMove{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
-}
 
 @media (max-width:768px){
+
+  .header{
+    position:relative;
+  }
+
+  .nav{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#ffffff;
+    flex-direction:column;
+    align-items:center;
+    gap:22px;
+    padding:28px 0;
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
+  }
+
+  .nav.open{
+    display:flex;
+  }
+
+  .hamburger{
+    display:flex;
+  }
+
   .contact-title{
     font-size:clamp(40px,10vw,64px);
+    margin-bottom:50px;
   }
 
   .ticket-btn{
     font-size:20px;
     padding:20px 50px;
   }
+
+  .container{
+    width:100%;
+    padding:0 20px;
+  }
+  
 }

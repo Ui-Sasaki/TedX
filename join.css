@@ -152,3 +152,34 @@ body{
   50%{ background-position:100% 50%; }
   100%{ background-position:0% 50%; }
 }
+
+@media (max-width:600px){
+
+  .header{
+    position:relative;
+  }
+
+  .nav{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#ffffff;
+    flex-direction:column;
+    align-items:center;
+    gap:22px;
+    padding:28px 0;
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
+    z-index:100;
+  }
+
+  .nav.open{
+    display:flex;
+  }
+
+  .hamburger{
+    display:flex;
+  }
+
+}

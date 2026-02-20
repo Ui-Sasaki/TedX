@@ -31,6 +31,8 @@ body{
   margin:0 auto;
 }
 
+/* ================= HEADER ================= */
+
 .header{
   position:sticky;
   top:0;
@@ -49,11 +51,7 @@ body{
   gap:18px;
 }
 
-.logo img{
-  height: 72px;
-  width:auto;
-  display:block;
-}
+/* ================= NAV ================= */
 
 .nav{
   display:flex;
@@ -67,9 +65,9 @@ body{
   color:rgba(0,0,0,.78);
   font-size:13px;
   letter-spacing:.12em;
-  padding:10px 10px;
+  padding:10px 12px;
   border-radius:999px;
-  transition:transform .15s ease,background .15s ease,color .15s ease;
+  transition:all .2s ease;
 }
 
 .nav a:hover{
@@ -77,6 +75,30 @@ body{
   color:rgba(0,0,0,.95);
   transform:translateY(-1px);
 }
+
+/* ================= HAMBURGER ================= */
+
+.hamburger{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:5px;
+  width:28px;
+  height:22px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:0;
+}
+
+.hamburger span{
+  width:100%;
+  height:3px;
+  background:#000;
+  border-radius:3px;
+}
+
+/* ================= PAGE ================= */
 
 .page{
   width:min(1200px, 92vw);
@@ -115,6 +137,8 @@ body{
   100%{background-position:0% 50%}
 }
 
+/* ================= SPEAKERS ================= */
+
 .speaker-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -125,7 +149,6 @@ body{
 .speaker-card{
   display:grid;
   grid-template-columns:200px 1fr;
-  max-width:1900px;
   gap:26px;
   background:#ffffff;
   border-radius:22px;
@@ -178,47 +201,20 @@ body{
   margin-top:6px;
 }
 
-.lift-up{
-  margin-top:-37%;
+/* desktop layout tricks */
+.lift-up{ margin-top:-37%; }
+.middle{ margin-top:-5%; }
+
+.wide-card{
+  grid-column:span 2;
 }
 
-.middle{
-    margin-top: -5%;
+.right-card{
+  grid-column:2;
+  margin-top:-40%;
 }
 
-/* SCHEDULE BOX */
-.schedule-card{
-  max-width:1300px;
-  margin:0 auto 60px;
-  background:#ffffff;
-  border-radius:22px;
-  padding:32px 40px;
-  border:4px solid #cfe0ff;
-  box-shadow:0 18px 40px rgba(42,78,155,.18);
-}
-
-.schedule-title{
-  font-size:32px;
-  font-weight:900;
-  margin-bottom:18px;
-  color:#243b6b;
-}
-
-.schedule-list{
-  list-style:none;
-  display:grid;
-  gap:14px;
-}
-
-.schedule-list li{
-  font-size:18px;
-  color:#344b7a;
-}
-
-.schedule-list strong{
-  color:#2563eb;
-  margin-right:10px;
-}
+/* ================= FOOTER ================= */
 
 .site-footer{
   width:100%;
@@ -230,12 +226,42 @@ body{
 }
 
 .site-footer img{
-  width:120%;        
-  max-width:none;   
+  width:120%;
+  max-width:none;
   height:auto;
 }
 
-@media (max-width: 900px){
+/* ================= MOBILE ================= */
+
+@media (max-width:600px){
+
+  .header{
+    position:relative;
+  }
+
+  .nav{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#ffffff;
+    flex-direction:column;
+    align-items:center;
+    gap:22px;
+    padding:28px 0;
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
+  }
+
+  .nav.open{
+    display:flex;
+  }
+
+  .hamburger{
+    display:flex;
+  }
+
+  /* speakers stacked */
   .speaker-grid{
     grid-template-columns:1fr;
   }
@@ -249,5 +275,17 @@ body{
     width:160px;
     height:160px;
     margin:0 auto;
+  }
+
+  /* remove overlapping tricks */
+  .wide-card,
+  .right-card{
+    grid-column:auto;
+  }
+
+  .lift-up,
+  .middle,
+  .right-card{
+    margin-top:0;
   }
 }
